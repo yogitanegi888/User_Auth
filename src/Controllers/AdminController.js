@@ -51,14 +51,20 @@ class AdminController {
         } catch (error) {
 
         }
+    }
+async Anagramcheck(req,res){
+    try{
+        const payload=req.query.input;
+        let result=await AdminService.CheckAnagram(payload);
+        res.json({
+            data: result
+        });
 
-
-
-
-
+    }catch(error){
 
     }
 
+}
 
 
 

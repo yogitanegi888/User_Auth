@@ -36,5 +36,10 @@ class AdminService {
         const userList = await adminSchema.find({}, '-password').exec()
         return userList
     }
+    async CheckAnagram(input){
+        const Anagram=["care","Charge"];
+        let result = Anagram.map(x => utilis.checkAnagram(input, x));
+        return result;
+    }
 }
 module.exports = new AdminService()
